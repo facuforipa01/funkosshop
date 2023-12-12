@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-:root{
+:root {
 
     /* paleta de colores */
     --primary-solid: #ff3333;
@@ -9,37 +9,38 @@
     --primary-300: rgb(255, 51, 51, 0.3);
 
     --secondary-solid: #1d84b5;
-    --secondary-900: rgb(29,132,181, 0.9);
-    --secondary-500: rgb(29,132,181, 0.5);
-    --secondary-300: rgb(29,132,181, 0.3);
+    --secondary-900: rgb(29, 132, 181, 0.9);
+    --secondary-500: rgb(29, 132, 181, 0.5);
+    --secondary-300: rgb(29, 132, 181, 0.3);
 
     --dark-solid: #1f1f1f;
-    --dark-900: rgb(31,31,31, 0.9);
-    --dark-500: rgb(31,31,31, 0.5);
-    --dark-300: rgb(31,31,31, 0.3);
+    --dark-900: rgb(31, 31, 31, 0.9);
+    --dark-500: rgb(31, 31, 31, 0.5);
+    --dark-300: rgb(31, 31, 31, 0.3);
 
     --dark-bg-solid: #30343f;
     --light-bg-solid: #fafaff;
     --light-font-solid: #ffffff;
 
     /* tipografia */
-    --base-font:'Inter', sans-serif;
-    --alternative-font: 'Raleway', sans-serif ;
+    --base-font: 'Inter', sans-serif;
+    --alternative-font: 'Raleway', sans-serif;
 
     /* sizes tipografia */
-    --font-display:4.6em;
-    --font-jumbo:3.8em;
-    --font-xlarge:3em;
-    --font-large:2.4em;
-    --font-medium:1.8em;
-    --font-small:1.6em;
-    --font-xsmall:1.2em;
+    --font-display: 4.6em;
+    --font-jumbo: 3.8em;
+    --font-xlarge: 3em;
+    --font-large: 2.4em;
+    --font-medium: 1.8em;
+    --font-small: 1.6em;
+    --font-xsmall: 1.2em;
 
     /* spacings */
     --spacing-128: 12.8rem;
     --spacing-68: 6.8rem;
     --spacing-36: 3.6rem;
     --spacing-28: 2.8rem;
+    --spacing-20: 2rem;
     --spacing-16: 1.6rem;
     --spacing-12: 1.2rem;
     --spacing-8: 0.8rem;
@@ -48,31 +49,33 @@
 *,
 *::before,
 *::after {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-family: var(--base-font);
     font-size: 62.5%;
-    color:var(--dark-solid)
+    color: var(--dark-solid)
 }
 
 a {
     font-family: inherit;
     text-decoration: none;
-    font-size: 2em;
     color: inherit;
 }
+
 header,
 footer {
-    font-family: var(--alternative-font) ;
+    font-family: var(--alternative-font);
     color: var(--light-font-solid);
     background-color: var(--dark-bg-solid);
+    padding: var(--spacing-36);
 }
 
-ul, ol{
+ul,
+ol {
     list-style: none;
 }
 
@@ -80,8 +83,72 @@ p {
     font-size: 1.8em;
 }
 
+img{
+    width: 100%;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+
+
+/* header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar__logo{
+    max-width: 300px;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-20)
+}
+
+.navbar__link{
+    font-size: var(--font-medium);
+padding: var(--spacing-8) var(--spacing-16);
+display: inline-block;
+transition: background .3s ease-in-out;
+position:relative
+}
+
+.navbar__link:hover {
+    background-color: var(--primary-900);
+    
+}
+.with-icon{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8)
+}
+
+.with-submenu:hover .submenu{
+    display: block;
+}
+
+.submenu{
+    display: none;
+    width: 200px;
+    position: absolute;
+    background-color: var(--dark-bg-solid);
+
+}
+
+.submenu__link {
+    display: block;
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-16);
+    transition: background .3s ease-in-out; 
+}
+
+.submenu__link:hover{
+    background-color: var(--primary-900);
+}
