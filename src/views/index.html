@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,129 +11,134 @@
 <body>
     <header>
         <nav class="navbar container">
-        <picture class="navbar__logo">
-            <a href="./index.html">
-                <img src="./../../public/img/branding/logo_light_horizontal.svg" alt="logo">
-            </a>
-        </picture>
-        
+            <picture class="navbar__logo">
+                <a href="./index.html">
+                    <img src="./../../public/img/branding/logo_light_horizontal.svg" alt="logo">
+                </a>
+            </picture>
+
             <ul class="navbar__menu">
                 <li class="navbar__item with-submenu">
-                    <a class="navbar__link with-icon" href="./tienda/shop.html">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
-                <ul class="submenu">
-                    <li class="submenu__item">
-                        <a href="" class="submenu__link">Funkos</a>
-                    </li>
-                    <li class="submenu__item">
-                        <a href="" class="submenu__link">Remeras</a>
-                    </li>
-                    <li class="submenu__item">
-                        <a href="" class="submenu__link">LLaveros</a>
-                    </li>
-                </ul>
+                    <a class="navbar__link with-icon" href="./tienda/shop.html">SHOP<iconify-icon
+                            icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">LLaveros</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="navbar__item">
                     <a class="navbar__link" href="">CONTACTO</a>
                 </li>
                 <li class="navbar__item">
                     <a class="navbar__link" href="auth/login.ejs">LOGIN</a>
-                    </li>
+                </li>
                 <li class="navbar__item">
                     <a class="navbar__cart" href="./tienda/cart.html">
                         <img src="../../public/img/icons/cart-icon.svg" alt=""></a>
-                    </li>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h3>Nuevos Ingresos</h3>
-            <p>Descubri el proximo Funko Pop de tu coleccion</p>
-            <a href="./tienda/shop.html">SHOP</a>
-        </section>
-    
-    <section>
-        <article>
-            <h3>STAR WARS & THE MANDALORIAN</h3>
-            <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
-            <a href="./tienda/shop.html">VER COLECCION</a>
+
+    <section class="hero">
+        <article class="hero__content container"> 
+            <h3 class="hero__title">Nuevos Ingresos</h3>
+            <p class="hero__text">Descubri el proximo Funko Pop de tu coleccion</p>
+            <a class="hero__link" href="./tienda/shop.html">SHOP</a>
         </article>
-        <picture>
-            <img src="./../../public/img/star-wars/baby-yoda-1.webp" alt="">
-        </picture>
-    </section>
-    <section>
-        <article>
-            <h3>POKEMON INDIGO</h3>
-            <p>Atrapa todos los que puedas y disfruta de una coleccion llena de amigos.</p>
-            <a href="./tienda/shop.html">VER COLECCION</a>
-        </article>
-        <picture>
-            <img src="./../../public/img/pokemon/vulpix-1.webp" alt="">
-        </picture>
-    </section>
-    <section>
-        <article>
-            <h3>HARRY POTTER</h3>
-            <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
-            <a href="./tienda/shop.html">VER COLECCION</a>
-        </article>
-        <picture>
-            <img src="./../../public/img/harry-potter/snape-patronus-1.webp" alt="">
-        </picture>
     </section>
 
-    <section>
-        <h2>Ultimos Lanzamientos</h2>
-        <ul>
-            <li>
-                <article>
-                    <a href="">
-                        <picture>
-                            <img src="../../public/img/star-wars/trooper-1.webp" alt="">
-                        </picture>
-                        <div>
-                            <p>STARWARS</p>
-                            <h4>STORMTROOPER LIGHTSABER</h4>
-                            <p>$ 1799,99</p>
-                            <p>3 coutas sin interes</p>
-                        </div>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a href="">
-                        <picture>
-                            <img src="../../public/img/pokemon/pidgeotto-1.webp" alt="">
-                        </picture>
-                        <div>
-                            <p>POKEMON</p>
-                            <h4>PIDGEOTTO</h4>
-                            <p>$ 1799,99</p>
-                            <p>3 coutas sin interes</p>
-                        </div>
-                    </a>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <a href="">
-                        <picture>
-                            <img src="../../public/img/harry-potter/luna-1.webp" alt="">
-                        </picture>
-                        <div>
-                            <p>HARRY POTTER</p>
-                            <h4>LUNA LOVEGOOD LION MASK</h4>
-                            <p>$ 1799,99</p>
-                            <p>3 coutas sin interes</p>
-                        </div>
-                    </a>
-                </article>
-            </li>
-        </ul>
-    </section>
-</main>
+    <main>
+
+        <section>
+            <article>
+                <h3>STAR WARS & THE MANDALORIAN</h3>
+                <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
+                <a href="./tienda/shop.html">VER COLECCION</a>
+            </article>
+            <picture>
+                <img src="./../../public/img/star-wars/baby-yoda-1.webp" alt="">
+            </picture>
+        </section>
+        <section>
+            <article>
+                <h3>POKEMON INDIGO</h3>
+                <p>Atrapa todos los que puedas y disfruta de una coleccion llena de amigos.</p>
+                <a href="./tienda/shop.html">VER COLECCION</a>
+            </article>
+            <picture>
+                <img src="./../../public/img/pokemon/vulpix-1.webp" alt="">
+            </picture>
+        </section>
+        <section>
+            <article>
+                <h3>HARRY POTTER</h3>
+                <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
+                <a href="./tienda/shop.html">VER COLECCION</a>
+            </article>
+            <picture>
+                <img src="./../../public/img/harry-potter/snape-patronus-1.webp" alt="">
+            </picture>
+        </section>
+
+        <section>
+            <h2>Ultimos Lanzamientos</h2>
+            <ul>
+                <li>
+                    <article>
+                        <a href="">
+                            <picture>
+                                <img src="../../public/img/star-wars/trooper-1.webp" alt="">
+                            </picture>
+                            <div>
+                                <p>STARWARS</p>
+                                <h4>STORMTROOPER LIGHTSABER</h4>
+                                <p>$ 1799,99</p>
+                                <p>3 coutas sin interes</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="">
+                            <picture>
+                                <img src="../../public/img/pokemon/pidgeotto-1.webp" alt="">
+                            </picture>
+                            <div>
+                                <p>POKEMON</p>
+                                <h4>PIDGEOTTO</h4>
+                                <p>$ 1799,99</p>
+                                <p>3 coutas sin interes</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <a href="">
+                            <picture>
+                                <img src="../../public/img/harry-potter/luna-1.webp" alt="">
+                            </picture>
+                            <div>
+                                <p>HARRY POTTER</p>
+                                <h4>LUNA LOVEGOOD LION MASK</h4>
+                                <p>$ 1799,99</p>
+                                <p>3 coutas sin interes</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
     <footer>
         <section>
             <nav>
@@ -145,7 +151,7 @@
                 <picture><img src="../../public/img/branding/isotype.svg" alt=""></picture>
             </nav>
         </section>
-       <p> © 2023 Funkoshop. Todos los derechos reservados.</p>
+        <p> © 2023 Funkoshop. Todos los derechos reservados.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
