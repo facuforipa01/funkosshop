@@ -13,10 +13,10 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  // admin: {
-  //   type: DataTypes.BOOLEAN,
-  //   default: false,
-  // },
+  admin: {
+    type: DataTypes.BOOLEAN,
+    default: false,
+  },
 });
 
 User.beforeSave(async (user, options) => {
