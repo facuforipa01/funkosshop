@@ -12,6 +12,7 @@
     --secondary-900: rgb(29, 132, 181, 0.9);
     --secondary-500: rgb(29, 132, 181, 0.5);
     --secondary-300: rgb(29, 132, 181, 0.3);
+    --secondary-100: rgb(29, 132, 181, 0.1);
 
     --dark-solid: #1f1f1f;
     --dark-900: rgb(31, 31, 31, 0.9);
@@ -424,8 +425,9 @@ img {
     display: flex;
     align-items: center;
     margin-left: 10px;
-    
+
 }
+
 .checkbox__text {
     font-size: var(--font-small);
     font-weight: 500;
@@ -444,31 +446,91 @@ img {
 
 /* item */
 
-.item__collection{
+.item__collection {
     font-size: var(--font-small);
     font-weight: 500;
 }
-.item__title{
+
+.item__title {
     font-size: var(--font-jumbo);
     font-weight: 700;
 }
-.cantidad__input{
+
+.cantidad__input {
     padding: var(--spacing-8)
 }
-.item__button{
-    background-color: var(--primary-solid); 
-    color: var(--light-bg-solid);  
-    font-size: var(--font-small); 
-    padding: var(--spacing-8) var(--spacing-12) ;
+
+.item__button {
+    background-color: var(--primary-solid);
+    color: var(--light-bg-solid);
+    font-size: var(--font-small);
+    padding: var(--spacing-8) var(--spacing-12);
 }
-.item__price{
+
+.item__price {
     font-size: var(--font-jumbo);
     font-weight: 400;
 }
-.item__promo{
+
+.item__promo {
     font-size: var(--font-xsmall);
     font-weight: 700;
     color: var(--secondary-solid);
+}
+
+.cart__title {
+    padding-top: var(--spacing-68);
+    font-size: var(--font-jumbo);
+    font-weight: 700;
+    border-bottom: solid var(--primary-solid);
+}
+
+.cabecera__tabla {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--secondary-100);
+    border-radius: var(--spacing-24);
+    margin-top: var(--spacing-36);
+    padding: var(--spacing-12);
+}
+
+
+.cabecera__title {
+    padding: var(--spacing-12);
+    font-weight: 700;
+    font-size: var(--font-xsmall);
+
+}
+
+.article__tabla {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    background-color: var(--secondary-100);
+    margin: var(--spacing-16) 0;
+    padding: var(--spacing-36);
+    border-radius: var(--spacing-28);
+}
+
+.article__img {
+    width: 40%;
+}
+.resumen{
+    text-align: right;
+}
+.article__resumen {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: var(--spacing-36);
+    background-color: var(--secondary-100);
+    margin: var(--spacing-16) 0;
+    padding: var(--spacing-36);
+    border-radius: var(--spacing-36);
+}
+td{
+    padding: var(--spacing-12) var(--spacing-68);
+    font-weight: 700;
+    font-size: var(--font-medium);
 }
 
 /* animaciones */

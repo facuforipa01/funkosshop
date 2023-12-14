@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkoshop</title>
+    <link rel="stylesheet" href="../../../public/css/index.css">
+    <script src="https://kit.fontawesome.com/fc9795f00b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="./../index.html">
+                    <img src="./../../../public/img/branding/logo_light_horizontal.svg" alt="logo">
+                </a>
+            </picture>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="../tienda/shop.html">SHOP<iconify-icon
+                            icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="../tienda/shop.html" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="../tienda/shop.html" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="../tienda/shop.html" class="submenu__link">LLaveros</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../tienda/about.html">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="../tienda/cart.html">
+                        <img src="../../../public/img/icons/cart-icon.svg" alt=""></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="buscador"><i class="fa-solid fa-magnifying-glass"></i><input type="text"
+                placeholder="codigo, nombre o categoria"></div>
+        <h2>LISTADO DE PRODUCTOS</h2><a href="create.html">
+            <h3><button>AGREGAR <i class="fa-solid fa-square-plus" id="trash"></i></button></h3>
+        </a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Codigo</th>
+                <th>Nombre del Producto</th>
+                <th>Categoria</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>STWOO1OO1</td>
+                <td>Baby Yoda Blueball</td>
+                <td>STARWARS</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>STWOO1OO2</td>
+                <td>Boba Fett Fighter</td>
+                <td>STARWARS</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>STWOO1OO3</td>
+                <td>Luke Skylwalker & Grogu</td>
+                <td>STARWARS</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>STWOO1OO4</td>
+                <td>Stormtrooper Lightsaber</td>
+                <td>STARWARS</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>PKMOO1OO1</td>
+                <td>Charmander Smiley</td>
+                <td>POKEMON</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>PKMOO1OO2</td>
+                <td>Dragonite Hi!</td>
+                <td>POKEMON</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>PKMOO1OO3</td>
+                <td>Pidgeotto Flying</td>
+                <td>POKEMON</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>PKMOO1OO4</td>
+                <td>Pikachu Smiley</td>
+                <td>POKEMON</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>PKMOO1OO5</td>
+                <td>Vulpix Fancy</td>
+                <td>POKEMON</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>HPTOO1OO1</td>
+                <td>Harry Potter & Hegwid</td>
+                <td>HARRY POTTER</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>HPTOO1OO2</td>
+                <td>Herminione Ball Dress</td>
+                <td>HARRY POTTER</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>HPTOO1OO3</td>
+                <td>Luna Lovegood Lion Mask</td>
+                <td>HARRY POTTER</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>HPTOO1OO4</td>
+                <td>Snape Patronus</td>
+                <td>HARRY POTTER</td>
+                <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
+                <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+            </tr>
+
+
+        </table>
+    </main>
+
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../tienda/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../tienda/about.html">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTER</a>
+                </li>
+            </ul>
+            <picture><img src="../../../public/img/branding/isotype.svg" alt=""></picture>
+        </nav>
+        <p class="footer__copy"> © 2023 Funkoshop. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

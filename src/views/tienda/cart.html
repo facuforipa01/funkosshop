@@ -47,30 +47,29 @@
         </nav>
     </header>
 
-    <h1>CARRITO DE COMPRAS</h1>
+    <main class="container">
+    <h1 class="cart__title">CARRITO DE COMPRAS</h1>
 
     <section>
         <ul>
-            <li>
-                <div>
+            <li class="cabecera__tabla">
+                <div class="cabecera__title">
                     DETALLE DE PRODUCTO
                 </div>
-                <div>
+                <div class="cabecera__title">
                     CANTIDAD
                 </div>
-                <div>
+                <div class="cabecera__title">
                     TOTAL
                 </div>
-                <div>
-                    QUITAR
-                </div>
+                
             </li>
-            <li>
+            <li class="article__tabla">
                 <div>
                     <article>
                         <a href="./item.html">
                             <picture>
-                                <img src="./../../../public/img/star-wars/baby-yoda-1.webp" alt="">
+                                <img class="article__img" src="./../../../public/img/star-wars/baby-yoda-1.webp" alt="">
                             </picture>
                             <div>
                                 <h3>BABY YODA BLUEBALL</h3>
@@ -84,18 +83,18 @@
                     <input type="number" placeholder="2">
                 </div>
                 <div>
-                    <h4>$ 3599,98</h4>
+                    <h2>$ 3599,98</h2>
                 </div>
                 <div>
                     <img src="" alt="">
                 </div>
             </li>
-            <li>
+            <li class="article__tabla">
                 <div>
                     <article>
                         <a href="./item.html">
                             <picture>
-                                <img src="../../../public/img/pokemon/pidgeotto-1.webp" alt="">
+                                <img class="article__img" src="../../../public/img/pokemon/pidgeotto-1.webp" alt="">
                             </picture>
                             <div>
                                 <h3>PIDGEOTTO</h3>
@@ -109,7 +108,7 @@
                     <input type="number" placeholder="1">
                 </div>
                 <div>
-                    <h4>$ 1799,99</h4>
+                    <h2>$ 1799,99</h2>
                 </div>
                 <div>
                     <img src="" alt="">
@@ -119,9 +118,9 @@
     </section>
 
 
-
-    <h1>RESUMEN</h1>
-    <section>
+<div class="resumen">
+    <h1 class="cart__title">RESUMEN</h1>
+    <section class="article__resumen">
         <table>
             <tr>
                 <td>CANTIDAD DE ELEMENTOS</td>
@@ -141,9 +140,11 @@
             </tr>
         </table>
 
-        <button>IR A PAGAR</button>
+        <a>IR A PAGAR</a>
     </section>
+</div>
 
+</main>
     <footer class="footer">
         <nav class="navbar container">
             <ul class="navbar__item">
