@@ -9,29 +9,29 @@ const { validationResult } = require("express-validator");
 const model = require("../../models/Product");
 const modelCategory = require("../../models/Category");
 
-const index = async (req, res) => {
+const getAdminView = async (req, res) => {
   try {
     const productos = await model.findAll({
       include: "Category",
     });
-    res.render("admin/productos/index", { productos });
+    res.render("admin/admin", { productos });
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
-const create = async (req, res) => {
+const getCreateProductView = async (req, res) => {
   // res.sendFile(path.resolve(__dirname, "../../views/admin/create.ejs"));
 
   try {
     const categorias = await modelCategory.findAll();
-    res.render("admin/productos/create", { categorias });
+    res.render("admin/create", { categorias });
   } catch (error) {
     res.status(500).send(error);
   }
 };
 
-const store = async (req, res) => {
+const createProduct = async (req, res) => {
   console.log(req.body, req.file);
 
   const errors = validationResult(req);
@@ -40,7 +40,7 @@ const store = async (req, res) => {
     try {
       const categorias = await modelCategory.findAll();
 
-      return res.render("admin/productos/create", {
+      return res.render("admin/create", {
         categorias,
         values: req.body,
         errors: errors.array(),
@@ -66,21 +66,21 @@ const store = async (req, res) => {
         .catch((err) => console.log(err));
     }
 
-    res.redirect("/admin/productos");
+    res.redirect("admin/admin");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
   }
 };
 
-const edit = async (req, res) => {
+const getEditView = async (req, res) => {
   try {
     const producto = await model.findByPk(req.params.id);
     // console.log(producto);
 
     if (producto) {
       const categorias = await modelCategory.findAll();
-      res.render("admin/productos/edit", { values: producto, categorias });
+      res.render("admin/edit", { values: producto, categorias });
     } else {
       res.status(404).send("No existe el producto");
     }
@@ -90,7 +90,7 @@ const edit = async (req, res) => {
   }
 };
 
-const update = async (req, res) => {
+const editProduct = async (req, res) => {
   console.log(req.params, req.body);
 
   const errors = validationResult(req);
@@ -99,7 +99,7 @@ const update = async (req, res) => {
     try {
       const categorias = await modelCategory.findAll();
 
-      return res.render("admin/productos/edit", {
+      return res.render("admin/edit", {
         categorias,
         values: req.body,
         errors: errors.array(),
@@ -129,7 +129,7 @@ const update = async (req, res) => {
           .catch((err) => console.log(err));
       }
 
-      res.redirect("/admin/productos");
+      res.redirect("admin/admin");
     } else {
       res.status(400).send("No se actualizo el producto");
     }
@@ -165,7 +165,7 @@ const destroy = async (req, res) => {
       }
     }
 
-    res.redirect("/admin/productos");
+    res.redirect("admin/admin");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -173,10 +173,10 @@ const destroy = async (req, res) => {
 };
 
 module.exports = {
-  index,
-  create,
-  store,
-  edit,
-  update,
+  getAdminView,
+  getCreateProductView,
+  createProduct,
+  getEditView,
+  editProduct,
   destroy,
 };

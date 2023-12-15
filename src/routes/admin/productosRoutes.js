@@ -24,14 +24,14 @@ const controller = require("../../controllers/admin/productosController");
 
 // CRUD = Create, Read, Update, Delete
 
-router.get("/", controller.index);
+router.get("/admin", controller.getAdminView);
 
-router.get("/create", controller.create);
-router.post("/", upload.single("imagen"), validations, controller.store);
+router.get("/admin/create", controller.getCreateProductView);
+router.post("/admin/create", upload.single("imagen"), validations, controller.createProduct);
 
-router.get("/:id/edit", controller.edit);
-router.put("/:id", upload.single("imagen"), validations, controller.update);
+router.get("/admin/:id/edit", controller.getEditView);
+router.put("/admin/:id", upload.single("imagen"), validations, controller.editProduct);
 
-router.delete("/:id", controller.destroy);
+router.delete("/admin/:id", controller.destroy);
 
 module.exports = router;

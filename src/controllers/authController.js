@@ -4,13 +4,13 @@ const { validationResult } = require("express-validator");
 const model = require("../models/User");
 
 const register = (req, res) => {
-  res.render("auth/register");
+  res.render("admin/register");
 };
 const postRegister = async (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    return res.render("auth/register", {
+    return res.render("admin/register", {
       values: req.body,
       errors: errors.array(),
     });
@@ -28,13 +28,13 @@ const postRegister = async (req, res) => {
 };
 
 const login = (req, res) => {
-  res.render("auth/login");
+  res.render("admin/login");
 };
 const postLogin = async (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    return res.render("auth/login", {
+    return res.render("admin/login", {
       values: req.body,
       errors: errors.array(),
     });
@@ -48,12 +48,12 @@ const postLogin = async (req, res) => {
     });
 
     if (!user) {
-      res.render("auth/login", {
+      res.render("admin/login", {
         values: req.body,
         errors: [{ msg: "El correo y/o contraseña son incorrectos (email)" }],
       });
     } else if (!(await bcryptjs.compare(req.body.password, user.password))) {
-      res.render("auth/login", {
+      res.render("admin/login", {
         values: req.body,
         errors: [
           { msg: "El correo y/o contraseña son incorrectos (password)" },
