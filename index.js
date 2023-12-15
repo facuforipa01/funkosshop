@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
-
+const expressLayouts = require("express-ejs-layouts")
 const sequelize = require("./src/models/connect");
  
 const session = require("cookie-session");
@@ -19,6 +19,9 @@ app.use(
 app.set("view engine", "ejs");
 //donde estan las vistas
 app.set("views", path.join(__dirname, "/src/views"));
+
+app.use(expressLayouts)
+app.set("layout", "layouts/layout")
 
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
