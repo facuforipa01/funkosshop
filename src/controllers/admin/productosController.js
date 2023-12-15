@@ -54,16 +54,18 @@ const createProduct = async (req, res) => {
     const producto = await model.create(req.body);
     console.log(producto);
 
-    if (req.file) {
-      sharp(req.file.buffer)
-        .resize(300)
-        .toFile(
-          path.resolve(
-            __dirname,
-            `../../../public/uploads/productos/producto_${producto.id}.jpg`
-          )
-        )
-        .catch((err) => console.log(err));
+    if (req.files.length === 2) {
+      const frontImagePromise = sharp(req.files[0].buffer)
+          .resize(600)
+          .toFile(path.resolve(__dirname, `../../../public/uploads/${product.id}-1.webp`))
+          .catch(err => console.log("Error en la imagen de frente: " + err));
+
+      const boxImagePromise = sharp(req.files[1].buffer)
+          .resize(600)
+          .toFile(path.resolve(__dirname, `../../../public/uploads/${product.id}-box.webp`))
+          .catch(err => console.log("Error en la imagen de dorso: " + err));
+
+      await Promise.all([frontImagePromise, boxImagePromise]);
     }
 
     res.redirect("admin/admin");

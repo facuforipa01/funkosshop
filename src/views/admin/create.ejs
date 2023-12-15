@@ -4,43 +4,59 @@ Producto Nuevo - Funkoshop
 <%- contentFor('main') %>
 <body>
     <main>
-        <h1>Crear nuevo item</h1>
-        <p>Categoria: </p><select name="categoria">
-            <option>Seleccionar</option>
-            <option>Star Wars</option>
-            <option>Pokemon</option>
-            <option>Harry Potter</option>
-        </select>
-        <p>Licencia: </p><select name="licencia">
-            <option>Seleccionar</option>
-            <option>Licencia 1</option>
-            <option>Licencia 2</option>
-            <option>Licencia 3</option>
-        </select>
-        <p>Nombre del producto:</p>
-        <input type="text" placeholder="Kakashi Hatake Shippuden Saga">
+        <form action=""> 
+            <h1>Crear nuevo item</h1>
+            <p>Categoria: </p>
+            <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="CategoryId">
+                        <option value="opcion1">Seleccionar</option> 
+                        <%categoriasDb.forEach(category => { %>
+                        <option value="<%=category.id %>" <%= values && category.id == values.CategoryId ? "selected" : ""%>> <%= category.category_name %></option>
+                        <% }) %>
+                    </select>
 
-        <input type="text" placeholder="Descripcion del producto">
+            <p>Licencia: </p>
+            <select name="licencia">
+                <option>Seleccionar</option>
+                <option>Licencia 1</option>
+                <option>Licencia 2</option>
+                <option>Licencia 3</option>
+            </select>
 
-        <p>SKU:</p>
-        <input type="text" placeholder="SSK111AB001">
-        <p>Precio:</p>
-        <input type="text" placeholder="$ 0.000,00">
-        <p>Stock:</p>
-        <input type="number" placeholder="0">
-        <p>Descuento:</p>
-        <input type="number" placeholder="0%">
-        <p>Cuotas: </p><select name="cuotas">
-            <option>3 Cuotas sin interes</option>
-            <option>6 Cuotas sin interes</option>
-            <option>12 Cuotas sin interes</option>
-            <option>Contado</option>
-        </select>
-        <p>Imagenes:</p>
-        <input type="file" placeholder="Elegir archivo">
+            <p>Nombre del producto:</p>
+            <input type="text" id="nombre" placeholder="Kakashi Hatake Shippuden Saga">
+    
+            <input type="text" id="descripcion" placeholder="Descripcion del producto">
+    
+            <p>SKU:</p>
+            <input type="text" id="sku" name="sku" placeholder="SSK111AB001">
+            <p>Precio:</p>
+            <input type="text"  id="precio" name="price" placeholder="$ 0.000,00">
+            <p>Stock:</p>
+            <input type="number" placeholder="0">
+            <p>Descuento:</p>
+            <input type="number" placeholder="0%">
 
+            <p>Cuotas: </p>
+            <select id="cuotas" name="cuotas">
+                <option value="Contado">Contado</option>
+                <option value="3 Cuotas sin interés" <%= values.dues == '3 Cuotas sin interés' ? "selected" : '' %>>3 Cuotas sin interés</option>
+                <option value="6 Cuotas" <%= values.dues == '6 Cuotas' ? "selected" : '' %>>6 Cuotas</option>
+                <option value="12 Cuotas" <%= values.dues == '12 Cuotas' ? "selected" : '' %>>12 Cuotas</option>
+            </select>
 
-        <button>Agregar producto</button>
-        <button>Limpiar</button>
+            <p>Imagenes:</p>
+            <div class="create-row">
+                <label for="imagenes">Imagen de frente:</label>
+                <input type="file" id="imagenes" name="imagenes" accept="image/*">
+                <label for="imagenes">Imagen de dorso:</label>
+                <input type="file" id="imagenes" name="imagenes" accept="image/*">
+            </div>
+    
+            <div>
+                <button>Agregar producto</button>
+                <button>Limpiar</button>
+            </div>
+        </form>
     </main>
 </body>
