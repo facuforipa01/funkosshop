@@ -1,4 +1,5 @@
 const modelProduct = require("../models/Product");
+const modelCategory = require("../models/Category");
 
 const index = (req, res) => {
   res.render("index");
@@ -15,10 +16,9 @@ const about = (req, res) => {
 
 const shop = async (req, res) => {
   try {
-    const productos = await modelProduct.findAll({
-      include: "Category",
-    });
-    res.render("tienda/shop", { productos });
+    const productos = await modelProduct.findAll();
+    const categorias = await modelCategory.findAll()
+    res.render("tienda/shop", { productos, categorias });
   } catch (error) {
     res.status(500).send(error);
   }
