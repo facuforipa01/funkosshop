@@ -32,14 +32,6 @@ const Product = sequelize.define("Product", {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    img_frente: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    img_dorso: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
 });
 
 Product.belongsTo(Category);
