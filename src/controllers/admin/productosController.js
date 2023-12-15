@@ -25,7 +25,9 @@ const getCreateProductView = async (req, res) => {
 
   try {
     const categorias = await modelCategory.findAll();
-    res.render("admin/create", { categorias });
+    console.log(categorias)
+    res.render("admin/create", { categorias,
+      values: req.body });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -57,18 +59,18 @@ const createProduct = async (req, res) => {
     if (req.files.length === 2) {
       const frontImagePromise = sharp(req.files[0].buffer)
           .resize(600)
-          .toFile(path.resolve(__dirname, `../../../public/uploads/${product.id}-1.webp`))
+          .toFile(path.resolve(__dirname, `../../../public/uploads/productos/${producto.id}-1.webp`))
           .catch(err => console.log("Error en la imagen de frente: " + err));
 
       const boxImagePromise = sharp(req.files[1].buffer)
           .resize(600)
-          .toFile(path.resolve(__dirname, `../../../public/uploads/${product.id}-box.webp`))
+          .toFile(path.resolve(__dirname, `../../../public/uploads/productos/${producto.id}-box.webp`))
           .catch(err => console.log("Error en la imagen de dorso: " + err));
 
       await Promise.all([frontImagePromise, boxImagePromise]);
     }
 
-    res.redirect("admin/admin");
+    res.redirect("/admin/productos");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);

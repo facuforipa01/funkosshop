@@ -44,12 +44,9 @@ Shop - Funkoshop
                 </ul>
             </div>
         </aside>
-<script>
 
-</script>
         <section class="shop__items--container container">
-            <ul class="shop__items">
-                <li class="slider__item">
+            
                     <% for (let i=0; i < productos.length; i++) { if (i===9) { break; } %>
                         <article class="card-item">
                         <a class="card-item__link" href="./item.html">
@@ -63,7 +60,7 @@ Shop - Funkoshop
                             <div class="card-item__content">
                                 <p class="card-item__licence">
                                     <%= ((categorias.find(categoria=> categoria.id ===
-                          productos[i].CategoryId)).category_nombre) %>
+                          productos[i].CategoryId)).nombre) %>
                                 </p>
                                 <h4 class="card-item__name">
                                     <%= productos[i].nombre %>
@@ -77,8 +74,6 @@ Shop - Funkoshop
                             </div>
                         </a>
                     </article> <% } %>
-                </li>
-            </ul>
         </section>
     </div>
 </body>

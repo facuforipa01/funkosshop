@@ -28,14 +28,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/public")));
 
 //llamo a los 4 achivos de rutas
-const mainRoutes = require("./src/routes/mainRoutes");
-const productosRoutes = require("./src/routes/admin/productosRoutes");
-const categoriasRoutes = require("./src/routes/admin/categoriasRoutes");
-const authRoutes = require("./src/routes/authRoutes");
+app.use(require("./src/routes/mainRoutes"));
 
-app.use(mainRoutes, productosRoutes,categoriasRoutes,authRoutes);
+app.use("/admin/productos", require("./src/routes/admin/productosRoutes.js"));
 
-// app.use("/admin/productos", require("./src/routes/adminProductosRoutes"));
+app.use("/admin/categorias", require("./src/routes/admin/categoriasRoutes.js"));
+
+app.use("/auth", require("./src/routes/authRoutes.js"));
 
 app.use((req, res, next) => {
   res.status(404).send("La pagina no existe");
