@@ -6,7 +6,7 @@ const sequelize = new Sequelize(
   process.env.DB_PASS,
   {
     host: process.env.DB_HOST,
-    dialectModule: require("mysql2"),
+    dialectModule: (require ("mysql2")),
     dialect: "mysql",
   }
 );
