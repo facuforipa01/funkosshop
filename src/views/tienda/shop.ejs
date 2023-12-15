@@ -6,47 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Funkoshop</title>
     <link rel="stylesheet" href="css/index.css">
+    <script>
+       
+      </script>
+      
 </head>
 
 <body>
-    <header>
-        <nav class="navbar container">
-            <picture class="navbar__logo">
-                <a href="./../index.html">
-                    <img src="img/branding/logo_light_horizontal.svg" alt="logo">
-                </a>
-            </picture>
-
-            <ul class="navbar__menu">
-                <li class="navbar__item with-submenu">
-                    <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon
-                            icon="tabler:chevron-down"></iconify-icon></a>
-                    <ul class="submenu">
-                        <li class="submenu__item">
-                            <a href="./shop.html" class="submenu__link">Funkos</a>
-                        </li>
-                        <li class="submenu__item">
-                            <a href="./shop.html" class="submenu__link">Remeras</a>
-                        </li>
-                        <li class="submenu__item">
-                            <a href="./shop.html" class="submenu__link">LLaveros</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="./about.html">CONTACTO</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="../admin/login.html">LOGIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__cart" href="./cart.html">
-                        <img src="img/icons/cart-icon.svg" alt=""></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
+    <%- include('../partials/header') %>
     <div class="shop container">
         <aside class="aside">
             <div>
@@ -65,31 +32,40 @@
                 <h2 class="buscar__titulo">PRECIO</h2>
                 <div class="precios">
                     <p class="minmax">MIN</p><input class="input__precio" type="number" name="" id="" placeholder=" 0">
-                    <p class="minmax">- MAX</p><input class="input__precio" type="number" name="" id="" placeholder=" 0">
+                    <p class="minmax">- MAX</p><input class="input__precio" type="number" name="" id=""
+                        placeholder=" 0">
                 </div>
             </div>
             <div>
                 <h2 class="buscar__titulo">FILTRAR</h2>
                 <ul class="filtros">
-                    <div class="checkboxes"><li><input type="checkbox" id="1"/></li><label class="checkbox__text" for="1">NUEVOS</label></div>
-                    <div class="checkboxes"><li><input type="checkbox" id="2"/></li><label class="checkbox__text" for="1">OFERTAS</label></div>
-                    <div class="checkboxes"><li><input type="checkbox" id="3"/></li><label class="checkbox__text" for="1">EDICION ESPECIAL</label></div>
-                    <div class="checkboxes"><li><input type="checkbox" id="4"/></li><label class="checkbox__text" for="1">FAVORITOS</label></div>
+                    <div class="checkboxes">
+                        <li><input type="checkbox" id="1" /></li><label class="checkbox__text" for="1">NUEVOS</label>
+                    </div>
+                    <div class="checkboxes">
+                        <li><input type="checkbox" id="2" /></li><label class="checkbox__text" for="1">OFERTAS</label>
+                    </div>
+                    <div class="checkboxes">
+                        <li><input type="checkbox" id="3" /></li><label class="checkbox__text" for="1">EDICION
+                            ESPECIAL</label>
+                    </div>
+                    <div class="checkboxes">
+                        <li><input type="checkbox" id="4" /></li><label class="checkbox__text" for="1">FAVORITOS</label>
+                    </div>
                 </ul>
             </div>
         </aside>
 
         <section class="shop__items--container container">
             <ul class="shop__items">
+                
                 <li class="slider__item">
                     <article class="card-item">
                         <a class="card-item__link" href="./item.html">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/star-wars/trooper-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/star-wars/trooper-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/star-wars/trooper-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/star-wars/trooper-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">STARWARS</p>
@@ -105,10 +81,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/pokemon/pidgeotto-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/pokemon/pidgeotto-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/pokemon/pidgeotto-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/pokemon/pidgeotto-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">POKEMON</p>
@@ -124,10 +98,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/harry-potter/luna-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/harry-potter/luna-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/harry-potter/luna-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/harry-potter/luna-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">HARRY POTTER</p>
@@ -143,10 +115,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/star-wars/trooper-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/star-wars/trooper-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/star-wars/trooper-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/star-wars/trooper-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">STARWARS</p>
@@ -162,10 +132,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/pokemon/pidgeotto-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/pokemon/pidgeotto-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/pokemon/pidgeotto-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/pokemon/pidgeotto-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">POKEMON</p>
@@ -181,10 +149,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/harry-potter/luna-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/harry-potter/luna-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/harry-potter/luna-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/harry-potter/luna-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">HARRY POTTER</p>
@@ -200,10 +166,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/star-wars/trooper-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/star-wars/trooper-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/star-wars/trooper-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/star-wars/trooper-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">STARWARS</p>
@@ -219,10 +183,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/pokemon/pidgeotto-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/pokemon/pidgeotto-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/pokemon/pidgeotto-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/pokemon/pidgeotto-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">POKEMON</p>
@@ -238,10 +200,8 @@
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
                                 <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="img/harry-potter/luna-1.webp"
-                                    alt="">
-                                <img class="card-item__img--back" src="img/harry-potter/luna-box.webp"
-                                    alt="">
+                                <img class="card-item__img--front" src="img/harry-potter/luna-1.webp" alt="">
+                                <img class="card-item__img--back" src="img/harry-potter/luna-box.webp" alt="">
                             </picture>
                             <div class="card-item__content">
                                 <p class="card-item__licence">HARRY POTTER</p>
@@ -255,28 +215,7 @@
             </ul>
         </section>
     </div>
-
-    <footer class="footer">
-        <nav class="navbar container">
-            <ul class="navbar__item">
-                <li class="navbar__item">
-                    <a class="navbar__link" href="./shop.html">SHOP</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="./about.html">CONTACTO</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="../admin/login.html">LOGIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="../admin/register.html">REGISTER</a>
-                </li>
-            </ul>
-            <picture><img src="img/branding/isotype.svg" alt=""></picture>
-        </nav>
-        <p class="footer__copy"> © 2023 Funkoshop. Todos los derechos reservados.</p>
-    </footer>
-
+    <%- include('../partials/footer') %>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 
 

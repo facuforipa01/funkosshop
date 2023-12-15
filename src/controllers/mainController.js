@@ -8,7 +8,7 @@ const cart = (req, res) => {
 };
 const about = (req, res) => {
   res.render("tienda/about");
-  
+
 };const item = (req, res) => {
   res.render("tienda/item");
 };
@@ -23,6 +23,7 @@ const shop = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
 
 module.exports = {
   index,

@@ -4,7 +4,8 @@
   "description": "trabajo practico Js/Node",
   "main": "index.js",
   "scripts": {
-    "test": "run dev"
+    "test": "run dev",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",

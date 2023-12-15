@@ -6,7 +6,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 
 const sequelize = require("./src/models/connect");
-
+ 
 const session = require("cookie-session");
 
 app.use(
@@ -15,24 +15,22 @@ app.use(
   })
 );
 
-
+//usa de motor de vistas a ejs
 app.set("view engine", "ejs");
+//donde estan las vistas
 app.set("views", path.join(__dirname, "/src/views"));
 
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/public")));
 
+//llamo a los 4 achivos de rutas
 const mainRoutes = require("./src/routes/mainRoutes");
-app.use(mainRoutes);
 const productosRoutes = require("./src/routes/admin/productosRoutes");
-app.use(productosRoutes);
 const categoriasRoutes = require("./src/routes/admin/categoriasRoutes");
-app.use(categoriasRoutes);
 const authRoutes = require("./src/routes/authRoutes");
-app.use(authRoutes);
 
-
+app.use(mainRoutes, productosRoutes,categoriasRoutes,authRoutes);
 
 // app.use("/admin/productos", require("./src/routes/adminProductosRoutes"));
 
