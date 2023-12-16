@@ -3,44 +3,15 @@ Categoria Nueva - Funkoshop
 
 <%- contentFor('main') %>
 <body>
-    <main>
-        <h1>Crear nuevo item</h1>
-        <p>Categoria: </p><select name="categoria">
-            <option>Seleccionar</option>
-            <option>Star Wars</option>
-            <option>Pokemon</option>
-            <option>Harry Potter</option>
-        </select>
-        <p>Licencia: </p><select name="licencia">
-            <option>Seleccionar</option>
-            <option>Licencia 1</option>
-            <option>Licencia 2</option>
-            <option>Licencia 3</option>
-        </select>
-        <p>Nombre del producto:</p>
-        <input type="text" placeholder="Kakashi Hatake Shippuden Saga">
-
-        <input type="text" placeholder="Descripcion del producto">
-
-        <p>SKU:</p>
-        <input type="text" placeholder="SSK111AB001">
-        <p>Precio:</p>
-        <input type="text" placeholder="$ 0.000,00">
-        <p>Stock:</p>
-        <input type="number" placeholder="0">
-        <p>Descuento:</p>
-        <input type="number" placeholder="0%">
-        <p>Cuotas: </p><select name="cuotas">
-            <option>3 Cuotas sin interes</option>
-            <option>6 Cuotas sin interes</option>
-            <option>12 Cuotas sin interes</option>
-            <option>Contado</option>
-        </select>
-        <p>Imagenes:</p>
-        <input type="file" placeholder="Elegir archivo">
-
-
-        <button>Agregar producto</button>
-        <button>Limpiar</button>
-    </main>
+    
+        <form action="create" method="post"> 
+            <h1>Crear nueva Categoria</h1>
+           
+            <p>Nombre: </p>
+            <input type="text" name="nombre" id="nombre" placeholder="Harry Potter">
+            <div>
+                <button type="submit">Agregar categoria</button>
+            </div>
+        </form>
+            
 </body>

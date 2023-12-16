@@ -13,16 +13,16 @@ const index = async (req, res) => {
 
 const create = (req, res) => {
   // res.sendFile(path.resolve(__dirname, "../../views/admin/create.ejs"));
-  res.render("admin/categorias/create");
+  res.render("admin/createCategoria");
 };
 
 const store = async (req, res) => {
-  console.log(req.body, req.file);
+  console.log(req.body);
 
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    return res.render("admin/categorias/create", {
+    return res.render("admin/createCategoria", {
       values: req.body,
       errors: errors.array(),
     });
@@ -32,7 +32,7 @@ const store = async (req, res) => {
     const categoria = await model.create(req.body);
     console.log(categoria);
 
-    res.redirect("/admin/categorias");
+    res.redirect("/admin/productos/create");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
