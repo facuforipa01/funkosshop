@@ -8,19 +8,19 @@ Item - Funkoshop
 
         <section class="collection container">
             <picture class="collection__cover">
-                <img src="./img/star-wars/baby-yoda-1.webp" alt="">
+                <img src="../../../public/uploads/productos/<%= producto.id %>-1.webp" alt="">
             </picture>
             <article class="collection__content">
-                <p class="item__collection">STARWARS</p>
-                <h3 class="item__title">BABY YODA BLUEBALL</h3>
-                <p class="item__description">Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.</p>
-                <h4 class="item__price">$ 1799,99</h4>
+                <p class="item__collection"><%= categoria.nombre %></p>
+                <h3 class="item__title"><%= producto.nombre %></h3>
+                <p class="item__description"><%= producto.descripcion %></p>
+                <h4 class="item__price">$ <%= producto.precio %></h4>
                 <div>
                     <input class="cantidad__input" type="number" placeholder=" 0">
                     <a class="item__button" href="./cart.html">Agregar al Carrito</a>
                 </div>
                 <div>
-                    <a class="item__promo" href="">Ver metodos de pago - 3 CUOTAS SIN INTERES</a>
+                    <a class="item__promo" href="">Ver metodos de pago - <%= producto.cuotas %></a>
                 </div>
             </article>
             

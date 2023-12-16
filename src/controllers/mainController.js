@@ -10,8 +10,12 @@ const cart = (req, res) => {
 const about = (req, res) => {
   res.render("tienda/about");
 
-};const item = (req, res) => {
-  res.render("tienda/item");
+};const item = async (req, res) => {
+  const producto = await modelProduct.findByPk(req.params.id)
+  const categoria = await modelCategory.findOne({where: {
+    id: producto.CategoryId
+  }})
+  res.render("tienda/item", {producto, categoria});
 };
 
 const shop = async (req, res) => {

@@ -54,7 +54,7 @@
                     <article class="shop__items">
                         <% for (let i=0; i < productos.length; i++) { if (i===9) { break; } %>
                             <article>
-                                <a href="/item">
+                                <a href="/item/<%= productos[i].id %>">
                                     <picture class="card-item__cover">
                                         <span class="card-item__tag">Nuevo</span>
                                         <img class="card-item__img--front"
