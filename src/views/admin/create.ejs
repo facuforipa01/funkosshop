@@ -8,8 +8,7 @@ Producto Nuevo - Funkoshop
             <h1>Crear nuevo item</h1>
             <p>Categoria: </p>
             <label for="categoria">Categoría:</label>
-                    <select id="categoria" name="CategoryId">
-                        <option value="1">Seleccionar</option> 
+                    <select id="categoria" name="CategoryId"> 
                         <%categorias.forEach(categoria => { %>
                         <option value="<%=categoria.id %>"> <%= categoria.nombre %></option>
                         <% }) %>
@@ -48,7 +47,6 @@ Producto Nuevo - Funkoshop
     
             <div>
                 <button type="submit">Agregar producto</button>
-                <button>Limpiar</button>
             </div>
         </form>
     </main>

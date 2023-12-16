@@ -20,7 +20,7 @@ const controller = require("../../controllers/admin/categoriasController");
 router.get("/", controller.index);
 
 router.get("/create", controller.create);
-router.post("/", validations, controller.store);
+router.post("/create", validations, controller.store);
 
 router.get("/:id/edit", controller.edit);
 router.put("/:id", validations, controller.update);
