@@ -4,7 +4,7 @@ Admin - Funkoshop
 <%- contentFor('main') %>
 <body>
     <main>
-        <a href="./categorias/create">
+        <a href="../categorias/create">
             <h3>
                 <button>Nueva Categoria
                      <i class="fa-solid fa-square-plus" id="trash"></i>
@@ -46,7 +46,7 @@ Admin - Funkoshop
                     <td><%= ((categorias.find(categoria=> categoria.id ===
                         productos[i].CategoryId)).nombre) %></td>
                     <td>
-                        <a href="productos/edit/<%= productos[i].id %>">
+                        <a href="/admin/productos/edit/<%= productos[i].id %>">
                             <i class="fa-solid fa-pen" id="pen"></i>
                         </a>
                     </td>

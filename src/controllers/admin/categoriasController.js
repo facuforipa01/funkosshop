@@ -45,7 +45,7 @@ const edit = async (req, res) => {
     console.log(categoria);
 
     if (categoria) {
-      res.render("admin/categorias/edit", { values: categoria });
+      res.render("admin/editCategoria", { values: categoria });
     } else {
       res.status(404).send("No existe el categoria");
     }
@@ -61,7 +61,7 @@ const update = async (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    return res.render("admin/categorias/edit", {
+    return res.render("admin/editCategoria", {
       values: req.body,
       errors: errors.array(),
     });

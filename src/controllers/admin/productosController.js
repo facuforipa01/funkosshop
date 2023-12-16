@@ -128,13 +128,13 @@ const editProduct = async (req, res) => {
           .toFile(
             path.resolve(
               __dirname,
-              `../../../public/uploads/productos/producto_${req.params.id}.jpg`
+              `../../../public/uploads/productos/${req.params.id}.jpg`
             )
           )
           .catch((err) => console.log(err));
       }
 
-      res.redirect("admin/admin");
+      res.redirect("/admin/productos");
     } else {
       res.status(400).send("No se actualizo el producto");
     }

@@ -1,55 +1,87 @@
 <%- contentFor('title') %>
-Producto Nuevo - Funkoshop
+    Producto Nuevo - Funkoshop
 
-<%- contentFor('main') %>
-<body>
-    <main>
-        <form action="create" method="post" enctype="multipart/form-data"> 
-            <h1>Crear nuevo item</h1>
-            <p>Categoria: </p>
-            <label for="categoria">Categoría:</label>
-                    <select id="categoria" name="CategoryId"> 
-                        <%categorias.forEach(categoria => { %>
-                        <option value="<%=categoria.id %>"> <%= categoria.nombre %></option>
-                        <% }) %>
-                    </select>
+    <%- contentFor('main') %>
 
-            <p>Nombre del producto:</p>
-            <input type="text" name="nombre" id="nombre" placeholder="Kakashi Hatake Shippuden Saga">
-    
-            <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion del producto">
-    
-            <p>SKU:</p>
-            <input type="text" id="sku" name="sku" placeholder="SSK111AB001">
-            <p>Precio:</p>
-            <input type="text"  id="precio" name="precio" placeholder="$ 0.000,00">
-            <p>Stock:</p>
-            <input type="number" placeholder="0" name="stock">
-            <p>Descuento:</p>
-            <input type="number" placeholder="0%" name="descuento">
+        <body>
+            <main>
+                <form action="create" method="post" enctype="multipart/form-data">
 
-            <p>Cuotas: </p>
-            <select id="cuotas" name="cuotas">
-                <option value="Contado">Contado</option>
-                <option value="3 Cuotas sin interés" <%= values.dues == '3 Cuotas sin interés' ? "selected" : '' %>>3 Cuotas sin interés</option>
-                <option value="6 Cuotas" <%= values.dues == '6 Cuotas' ? "selected" : '' %>>6 Cuotas</option>
-                <option value="12 Cuotas" <%= values.dues == '12 Cuotas' ? "selected" : '' %>>12 Cuotas</option>
-            </select>
+                    <h1>Crear nuevo item</h1>
 
-            <p>Imagenes:</p>
-            <div class="create-row">
-                <label for="imagenes">Imagen de frente:</label>
-                <input type="file" name="frontImage" accept="image/*">
+                    <div>
+                        <label for="categoria">Categoría:</label>
+                        <select id="categoria" name="CategoryId">
+                            <%categorias.forEach(categoria=> { %>
+                                <option value="<%=categoria.id %>">
+                                    <%= categoria.nombre %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
 
-                <label for="imagenes">Imagen de dorso:</label>
-                <input type="file" name="boxImage" accept="image/*">
-            </div>
-    
-            <div>
-                <button type="submit">Agregar producto</button>
-            </div>
-        </form>
-    </main>
-</body>
- 
-<!-- de p a label -->
+                    <div>
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Kakashi Hatake Shippuden Saga">
+                    </div>
+
+                    <div>
+                        <label>Descripcion:</label>
+                        <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion del producto">
+                    </div>
+
+
+                    <div>
+                        <label>SKU:</label>
+                        <input type="text" id="sku" name="sku" placeholder="SSK111AB001">
+                    </div>
+
+                    <div>
+                        <label>Precio:</label>
+                        <input type="text" id="precio" name="precio" placeholder="$ 0.000,00">
+                    </div>
+
+                    <div>
+                        <label>Stock:</label>
+                        <input type="number" placeholder="0" name="stock">
+                    </div>
+
+                    <div>
+                        <label>Descuento:</label>
+                        <input type="number" placeholder="0%" name="descuento">
+                    </div>
+
+                    <div>
+                        <label>Cuotas: </label>
+                        <select id="cuotas" name="cuotas">
+                            <option value="Contado">Contado</option>
+                            <option value="3 Cuotas sin interés" <%=values.dues=='3 Cuotas sin interés' ? "selected"
+                                : '' %>
+                                >3 Cuotas sin interés</option>
+                            <option value="6 Cuotas" <%=values.dues=='6 Cuotas' ? "selected" : '' %>>6 Cuotas</option>
+                            <option value="12 Cuotas" <%=values.dues=='12 Cuotas' ? "selected" : '' %>>12 Cuotas
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <div class="create-row">
+            
+                        <div>
+                            <label for="imagenes">Imagen de frente:</label>
+                            <input type="file" name="frontImage" accept="image/*">
+                        </div>
+                        <div>
+                            <label for="imagenes">Imagen de la caja:</label>
+                            <input type="file" name="boxImage" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit">Agregar producto</button>
+                    </div>
+                </form>
+            </main>
+        </body>
+
+        <!-- de p a label -->

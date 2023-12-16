@@ -1,17 +1,17 @@
 <%- contentFor('title') %>
-Editar Categoria - Funkoshop
+    Editar Categoria - Funkoshop
 
-<%- contentFor('main') %>
-<body>
-    <%- include('../partials/header') %>
-    <main>
-        <h1>Editar categoria</h1>
+    <%- contentFor('main') %>
 
-        <p>Categoria:</p>
-        <input type="text" placeholder="Nombre Categoria">
+        <main>
+            <h1>Edit categoría</h1>
 
-
-        <button>Agregar categoria</button>
-        <button>Limpiar</button>
-    </main>
-</body>
+            <form action="/admin/categorias/edit/<%= values.id %>?_method=PUT" method="post">
+                <div>
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre"
+                        value="<%= typeof values != 'undefined' ? values.nombre : '' %>" />
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+        </main>

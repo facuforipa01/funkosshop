@@ -1,44 +1,91 @@
 <%- contentFor('title') %>
-Editar Producto - Funkoshop
+    Editar Producto - Funkoshop
 
-<%- contentFor('main') %>
-<body>
-    <main>
-        <h1>Editar item</h1>
-        <p>Categoria: </p><select name="categoria">
-<!-- por cada categoria que viene en el array crear un option -->
-<!-- for categoria.[i].nombre(de cada categoria)  -->
-<!-- no se puede usar async/await en bucles forEach
-for (let element of array) {} -->
-            <option>Seleccionar</option>
-            <option>Star Wars</option>
-            <option>Pokemon</option>
-            <option>Harry Potter</option>
+    <%- contentFor('main') %>
 
-        <p>Nombre del producto:</p>
-        <input type="text" placeholder="Kakashi Hatake Shippuden Saga">
+        <body>
+            <main>
+                <h1>Edit Producto</h1>
+                <form action="/admin/productos/edit/<%= values.id %>?_method=PUT" method="post"
+                    enctype="multipart/form-data">
 
-        <input type="text" placeholder="Descripcion del producto">
+                    <div>
+                        <label for="CategoryId">Categoria: </label>
+                        <select name="CategoryId" id="CategoryId">
+                            <option value=""></option>
+                            <% categorias.forEach(categoria=> { %>
+                                <option value="<%= categoria.id %>" <%=categoria.id==values.CategoryId ? "selected" : ""
+                                    %> ><%= categoria.nombre %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
 
-        <p>SKU:</p>
-        <input type="text" placeholder="SSK111AB001">
-        <p>Precio:</p>
-        <input type="text" placeholder="$ 0.000,00">
-        <p>Stock:</p>
-        <input type="number" placeholder="0">
-        <p>Descuento:</p>
-        <input type="number" placeholder="0%">
-        <p>Cuotas: </p><select name="cuotas">
-            <option>3 Cuotas sin interes</option>
-            <option>6 Cuotas sin interes</option>
-            <option>12 Cuotas sin interes</option>
-            <option>Contado</option>
-        </select>
-        <p>Imagenes:</p>
-        <input type="file" placeholder="Elegir archivo">
+                    <div>
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" id="nombre" name="nombre"
+                            value="<%= typeof values != 'undefined' ? values.nombre : '' %>" />
+                    </div>
 
+                    <div>
+                        <label>Descripcion:</label>
+                        <input type="text" name="descripcion" id="descripcion"
+                            value="<%= typeof values != 'undefined' ? values.descripcion : '' %>">
+                    </div>
 
-        <button>Agregar producto</button>
-        <button>Limpiar</button>
-    </main>
-</body>
+                    <div>
+                        <label>SKU:</label>
+                        <input type="text" id="sku" name="sku"
+                            value="<%= typeof values != 'undefined' ? values.sku : '' %>">
+                    </div>
+
+                    <div>
+                        <label for="precio">Precio: </label>
+                        <input type="number" id="precio" name="precio"
+                            value="<%= typeof values != 'undefined' ? values.precio : '' %>" />
+                    </div>
+
+                    <div>
+                        <label>Stock:</label>
+                        <input type="number" value="<%= typeof values != 'undefined' ? values.stock : '' %>" name="stock">
+                    </div>
+
+                    <div>
+                        <label>Descuento:</label>
+                        <input type="number" value="<%= typeof values != 'undefined' ? values.descuento : '' %>" name="descuento">
+                    </div>
+
+                    <div>
+                        <label>Cuotas: </label>
+                        <select id="cuotas" name="cuotas">
+                            <option value="Contado">Contado</option>
+                            <option value="3 Cuotas sin interés" <%=values.dues=='3 Cuotas sin interés' ? "selected"
+                                : '' %>
+                                >3 Cuotas sin interés</option>
+                            <option value="6 Cuotas" <%=values.dues=='6 Cuotas' ? "selected" : '' %>>6 Cuotas</option>
+                            <option value="12 Cuotas" <%=values.dues=='12 Cuotas' ? "selected" : '' %>>12 Cuotas
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="create-row">
+            
+                        <div>
+                            <label for="imagenes">Imagen de frente:</label>
+                            <input type="file" name="frontImage" accept="image/*">
+                            <img width="100" src="/uploads/productos/<%= values.id %>-1"
+                            alt="<%= values.nombre %>" />
+                        </div>
+                        <div>
+                            <label for="imagenes">Imagen de la caja:</label>
+                            <input type="file" name="boxImage" accept="image/*">
+                            <img width="100" src="/uploads/productos/<%= values.id %>-box"
+                            alt="<%= values.nombre %>" />
+                        </div>
+                    
+                    <button type="submit">Guardar</button>
+                </form>
+            </main>
+
+            
+        </body>
