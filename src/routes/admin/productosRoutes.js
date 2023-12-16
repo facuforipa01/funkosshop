@@ -32,6 +32,6 @@ router.post("/create", upload.any("imagen"), validations, controller.createProdu
 router.get("/:id/edit", controller.getEditView);
 router.put("/:id", upload.any("imagen"), validations, controller.editProduct);
 
-router.delete("/:id", controller.destroy);
+router.delete("/delete/:id", controller.destroy);
 
 module.exports = router;
