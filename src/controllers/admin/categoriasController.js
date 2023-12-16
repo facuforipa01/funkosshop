@@ -5,7 +5,7 @@ const model = require("../../models/Category");
 const index = async (req, res) => {
   try {
     const categorias = await model.findAll();
-    res.render("admin/categorias/index", { categorias });
+    res.render("admin/adminCategoria", { categorias });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -32,7 +32,7 @@ const store = async (req, res) => {
     const categoria = await model.create(req.body);
     console.log(categoria);
 
-    res.redirect("/admin/productos/create");
+    res.redirect("/admin/categorias");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);

@@ -4,6 +4,8 @@ Admin - Funkoshop
 <%- contentFor('main') %>
 <body>
     <main>
+        
+        
         <a href="./categorias/create">
             <h3>
                 <button>Nueva Categoria
@@ -19,7 +21,7 @@ Admin - Funkoshop
             </h3>
         </a>
 
-        <h2>LISTADO DE PRODUCTOS</h2>
+        <h2>LISTADO DE CATEGORIAS</h2>
 
         <div class="buscador">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -30,28 +32,23 @@ Admin - Funkoshop
           
             <tr>
                 <th>ID</th>
-                <th>Codigo</th>
-                <th>Nombre del Producto</th>
-                <th>ID Categoria</th>
-                <th></th>
-                <th></th>
+                <th>Nombre Categoria</th>
+                <th>editar</th>
+                <th>eliminar</th>
             </tr>
             
-            <% for (let i = 0; i < productos.length; i++) { %>
+            <% for (let i = 0; i < categorias.length; i++) { %>
             
                 <tr>
-                    <td><%= productos[i].id %></td>
-                    <td><%= productos[i].sku %></td>
-                    <td><%= productos[i].nombre %></td>
-                    <td><%= ((categorias.find(categoria=> categoria.id ===
-                        productos[i].CategoryId)).nombre) %></td>
+                    <td><%= categorias[i].id %></td>
+                    <td><%= categorias[i].nombre %></td>
                     <td>
-                        <a href="productos/edit/<%= productos[i].id %>">
+                        <a href="categorias/edit/<%= categorias[i].id %>">
                             <i class="fa-solid fa-pen" id="pen"></i>
                         </a>
                     </td>
                     <td>
-                        <form class="form-delete" action="/admin/productos/delete/<%= productos[i].id %>?_method=DELETE" method="post">
+                        <form class="form-delete" action="/admin/categorias/delete/<%= categorias[i].id %>?_method=DELETE" method="post">
                         <button type="submit"><i class="fa-solid fa-trash-can" id="trash"></i></button>
                         </form>
                     </td>

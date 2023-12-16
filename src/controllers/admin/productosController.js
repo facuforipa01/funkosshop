@@ -11,10 +11,11 @@ const modelCategory = require("../../models/Category");
 
 const getAdminView = async (req, res) => {
   try {
-    const productos = await model.findAll({
-      include: "Category",
-    });
-    res.render("admin/admin", { productos });
+    //traigo los productos
+    const productos = await model.findAll();
+    //traigo las categorias
+    const categorias = await modelCategory.findAll()
+    res.render("admin/admin", { productos, categorias });
   } catch (error) {
     res.status(500).send(error);
   }
