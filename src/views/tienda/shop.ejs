@@ -1,77 +1,86 @@
 <%- contentFor('title') %>
-Shop - Funkoshop
+    Shop - Funkoshop
 
-<%- contentFor('main') %>
-<body>
-    <div class="shop container">
-        <aside class="aside">
-            <div>
-                <h2 class="buscar__titulo">BUSCAR</h2>
-                <input class="selector" type="text" name="" id="" placeholder=" item o categoria">
-            </div>
-            <div>
-                <h2 class="buscar__titulo">ORDENAR POR</h2>
-                <select class="selector" name="" id="">
-                    <option value="menor">Menor a mayor</option>
-                    <option value="mayor" selected>Mayor a menor</option>
-                    <option value="relevantes">Mas relevantes</option>
-                </select>
-            </div>
-            <div>
-                <h2 class="buscar__titulo">PRECIO</h2>
-                <div class="precios">
-                    <p class="minmax">MIN</p><input class="input__precio" type="number" name="" id="" placeholder=" 0">
-                    <p class="minmax">- MAX</p><input class="input__precio" type="number" name="" id=""
-                        placeholder=" 0">
-                </div>
-            </div>
-            <div>
-                <h2 class="buscar__titulo">FILTRAR</h2>
-                <ul class="filtros">
-                    <div class="checkboxes">
-                        <li><input type="checkbox" id="1" /></li><label class="checkbox__text" for="1">NUEVOS</label>
-                    </div>
-                    <div class="checkboxes">
-                        <li><input type="checkbox" id="2" /></li><label class="checkbox__text" for="1">OFERTAS</label>
-                    </div>
-                    <div class="checkboxes">
-                        <li><input type="checkbox" id="3" /></li><label class="checkbox__text" for="1">EDICION
-                            ESPECIAL</label>
-                    </div>
-                    <div class="checkboxes">
-                        <li><input type="checkbox" id="4" /></li><label class="checkbox__text" for="1">FAVORITOS</label>
-                    </div>
-                </ul>
-            </div>
-        </aside>
+    <%- contentFor('main') %>
 
-        <section class="shop__items--container container">
-            
-                    <% for (let i=0; i < productos.length; i++) { if (i===9) { break; } %>
-                        <article class="card-item">
-                        <a class="card-item__link" href="./item.html">
-                            <picture class="card-item__cover">
-                                <span class="card-item__tag">Nuevo</span>
-                                <img class="card-item__img--front" src="uploads/productos/<%= productos[i].id %>-1.webp"> 
-                                <img class="card-item__img--back" src="uploads/productos/<%= productos[i].id %>-box.webp">                            
-                            </picture>
-                            <div class="card-item__content">
-                                <p class="card-item__licence">
-                                    <%= ((categorias.find(categoria=> categoria.id ===
-                          productos[i].CategoryId)).nombre) %>
-                                </p>
-                                <h4 class="card-item__name">
-                                    <%= productos[i].nombre %>
-                                </h4>
-                                <p class="card-item__price">
-                                    <%= productos[i].precio %>
-                                </p>
-                                <p class="card-item__promo">
-                                    <%= productos[i].descuento %>
-                                </p>
+        <body>
+            <div class="shop container">
+                <aside class="aside">
+                    <div>
+                        <h2 class="buscar__titulo">BUSCAR</h2>
+                        <input class="selector" type="text" name="" id="" placeholder=" item o categoria">
+                    </div>
+                    <div>
+                        <h2 class="buscar__titulo">ORDENAR POR</h2>
+                        <select class="selector" name="" id="">
+                            <option value="menor">Menor a mayor</option>
+                            <option value="mayor" selected>Mayor a menor</option>
+                            <option value="relevantes">Mas relevantes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h2 class="buscar__titulo">PRECIO</h2>
+                        <div class="precios">
+                            <p class="minmax">MIN</p><input class="input__precio" type="number" name="" id=""
+                                placeholder=" 0">
+                            <p class="minmax">- MAX</p><input class="input__precio" type="number" name="" id=""
+                                placeholder=" 0">
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="buscar__titulo">FILTRAR</h2>
+                        <ul class="filtros">
+                            <div class="checkboxes">
+                                <li><input type="checkbox" id="1" /></li><label class="checkbox__text"
+                                    for="1">NUEVOS</label>
                             </div>
-                        </a>
-                    </article> <% } %>
-        </section>
-    </div>
-</body>
+                            <div class="checkboxes">
+                                <li><input type="checkbox" id="2" /></li><label class="checkbox__text"
+                                    for="1">OFERTAS</label>
+                            </div>
+                            <div class="checkboxes">
+                                <li><input type="checkbox" id="3" /></li><label class="checkbox__text" for="1">EDICION
+                                    ESPECIAL</label>
+                            </div>
+                            <div class="checkboxes">
+                                <li><input type="checkbox" id="4" /></li><label class="checkbox__text"
+                                    for="1">FAVORITOS</label>
+                            </div>
+                        </ul>
+                    </div>
+                </aside>
+
+                <section class="shop__items--container container">
+                    <article class="shop__items">
+                        <% for (let i=0; i < productos.length; i++) { if (i===9) { break; } %>
+                            <article>
+                                <a href="/item">
+                                    <picture class="card-item__cover">
+                                        <span class="card-item__tag">Nuevo</span>
+                                        <img class="card-item__img--front"
+                                            src="/uploads/productos/<%= productos[i].id %>-1.webp">
+                                        <img class="card-item__img--back"
+                                            src="/uploads/productos/<%= productos[i].id %>-box.webp">
+                                    </picture>
+                                    <div class="card-item__content">
+                                        <p class="card-item__licence">
+                                            <%= ((categorias.find(categoria=> categoria.id ===
+                                                productos[i].CategoryId)).nombre) %>
+                                        </p>
+                                        <h4 class="card-item__name">
+                                            <%= productos[i].nombre %>
+                                        </h4>
+                                        <p class="card-item__price">
+                                            <%= productos[i].precio %>
+                                        </p>
+                                        <p class="card-item__promo">
+                                            <%= productos[i].descuento %>
+                                        </p>
+                                    </div>
+                                </a>
+                            </article>
+                            <% } %>
+                    </article>
+                </section>
+            </div>
+        </body>
