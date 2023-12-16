@@ -4,10 +4,17 @@ Admin - Funkoshop
 <%- contentFor('main') %>
 <body>
     <main>
-        <div class="buscador"><i class="fa-solid fa-magnifying-glass"></i><input type="text"
-                placeholder="codigo, nombre o categoria"></div>
-        <h2>LISTADO DE PRODUCTOS</h2><a href="create.html">
-            <h3><button>AGREGAR <i class="fa-solid fa-square-plus" id="trash"></i></button></h3>
+        <div class="buscador">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="codigo, nombre o categoria">
+        </div>
+        <h2>LISTADO DE PRODUCTOS</h2>
+        <a href="./productos/create">
+            <h3>
+                <button>AGREGAR
+                     <i class="fa-solid fa-square-plus" id="trash"></i>
+                </button>
+            </h3>
         </a>
         <table>
           
@@ -28,7 +35,11 @@ Admin - Funkoshop
                     <td><%= productos[i].nombre %></td>
                     <td>STARWARS</td>
                     <td><a href="edit.html"><i class="fa-solid fa-pen" id="pen"></i></a></td>
-                    <td><i class="fa-solid fa-trash-can" id="trash"></i></td>
+                    <td>
+                        <form class="form-delete" action="/admin/productos/delete/<%= productos[i] %>?_method=DELETE" method="post">
+                        <button type="submit"><i class="fa-solid fa-trash-can" id="trash"></i></button>
+                        </form>
+                    </td>
                 </tr>
 
             <% } %>
