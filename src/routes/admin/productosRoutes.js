@@ -29,8 +29,8 @@ router.get("/", controller.getAdminView);
 router.get("/create", controller.getCreateProductView);
 router.post("/create", upload.any("imagen"), validations, controller.createProduct);
 
-router.get("/:id/edit", controller.getEditView);
-router.put("/:id", upload.any("imagen"), validations, controller.editProduct);
+router.get("/edit/:id", controller.getEditView);
+router.put("/edit/:id", upload.any("imagen"), validations, controller.editProduct);
 
 router.delete("/delete/:id", controller.destroy);
 

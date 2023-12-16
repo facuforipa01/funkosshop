@@ -169,7 +169,7 @@ const destroy = async (req, res) => {
       }
     }
 
-    res.redirect("admin/admin");
+    res.redirect("/admin/productos");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
