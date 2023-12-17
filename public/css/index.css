@@ -567,21 +567,39 @@ td {
 label{
     font-size: var(--font-medium);
 }
+
 .formulario{
     display: flex;
     flex-direction: column;
     gap: var(--spacing-24);
     padding: var(--spacing-16);
 }
+
 th{
     font-size: var(--font-medium);
     padding: var(--spacing-24);
 }
+
 td{
     font-size: var(--font-medium);
     padding: var(--spacing-20);
     font-family: var(--base-font);
     font-weight: 500;
+}
+
+.fa-trash-can{
+color: var(--primary-solid)
+}
+.fa-pen{
+    color: var(--secondary-solid)
+}
+input{
+    height: var(--spacing-28);
+    width: 50%;
+}
+select{
+    height: var(--spacing-28);
+    width: 50%;
 }
 
 
