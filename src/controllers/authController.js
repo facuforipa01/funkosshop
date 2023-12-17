@@ -6,6 +6,7 @@ const model = require("../models/User");
 const register = (req, res) => {
   res.render("admin/register");
 };
+
 const postRegister = async (req, res) => {
   const errors = validationResult(req);
 
@@ -17,10 +18,10 @@ const postRegister = async (req, res) => {
   }
 
   try {
-    const user = await model.create(req.body);
+    const usuario = await model.create(req.body);
+    console.log(usuario);
 
-    // console.log(req.body, user);
-    res.redirect("/");
+    res.redirect("/auth/login");
   } catch (error) {
     console.log(error);
     res.send(error);

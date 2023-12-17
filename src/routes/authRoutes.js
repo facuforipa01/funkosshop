@@ -39,7 +39,7 @@ const registerValidations = [
       minNumbers: 1,
       minSymbols: 1,
     })
-    .withMessage("La contraseña debe tener ...")
+    .withMessage("La contraseña debe tener minimo 6 caracteres, una mayuscula, una minuscula, un simbolo y un numero")
     .bail()
     .custom((value, { req }) => value === req.body.password_confirmation)
     .withMessage("Las contraseñas no coinciden"),

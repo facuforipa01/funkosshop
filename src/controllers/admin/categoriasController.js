@@ -12,13 +12,10 @@ const index = async (req, res) => {
 };
 
 const create = (req, res) => {
-  // res.sendFile(path.resolve(__dirname, "../../views/admin/create.ejs"));
   res.render("admin/createCategoria");
 };
 
 const store = async (req, res) => {
-  console.log(req.body);
-
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
