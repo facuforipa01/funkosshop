@@ -1,21 +1,32 @@
 <%- contentFor('title') %>
-LogIn - Funkoshop
+    LogIn - Funkoshop
 
-<%- contentFor('main') %>
-<body>
+    <%- contentFor('main') %>
 
-    <main>
-        <h1>Ingresar a mi cuenta</h1>
-        
-        <p>Email:</p>
-        <input type="email" placeholder="jhondoe@correo.com">
-        <p>Contraseña:</p>
-        <input type="password" placeholder="........">
-       
-        <button>Ingresar</button>
+        <body>
 
-        <button>
-        <a href="/admin/productos">ADMIN</a>
-        </button>
-    </main>
-</body>
+            <main>
+                <h1>Ingresar a mi cuenta</h1>
+
+                <div>
+                    <label>Email:</label>
+                    <input type="email" placeholder="jhondoe@correo.com">
+                </div>
+                <div>
+                    <label>Contraseña:</label>
+                    <input type="password" placeholder="........">
+                </div>
+
+                <button>Ingresar</button>
+
+                <div><button>
+                        <a href="/admin/productos">ADMIN PRODUCTOS</a>
+                    </button></div>
+                <div><button>
+                        <a href="/admin/categorias">ADMIN CATEGORIAS</a>
+                    </button></div>
+
+
+
+            </main>
+        </body>

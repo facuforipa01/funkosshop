@@ -55,20 +55,16 @@ const createProduct = async (req, res) => {
 
   try {
     const producto = await model.create(req.body);
-    console.log(producto);
-
-    if (req.files.length === 2) {
-      const frontImagePromise = sharp(req.files[0].buffer)
-          .resize(600)
-          .toFile(path.resolve(__dirname, `../../../public/uploads/productos/${producto.id}-1.webp`))
-          .catch(err => console.log("Error en la imagen de frente: " + err));
-
-      const boxImagePromise = sharp(req.files[1].buffer)
-          .resize(600)
-          .toFile(path.resolve(__dirname, `../../../public/uploads/productos/${producto.id}-box.webp`))
-          .catch(err => console.log("Error en la imagen de dorso: " + err));
-
-      await Promise.all([frontImagePromise, boxImagePromise]);
+    for (const [index, file] of req.files.entries()) {
+      const fileName = index === 0 ? "1" : "box"; // Define nombres para cada imagen
+      const imagePath = path.resolve(__dirname, `../../../public/uploads/productos/${producto.id}-${fileName}.webp`);
+    
+      const imagePromise = sharp(file.buffer)
+        .resize(600)
+        .toFile(imagePath)
+        .catch(err => console.log(`Error en la imagen de ${fileName}: ${err}`));
+    
+      await imagePromise;
     }
 
     res.redirect("/admin/productos");
@@ -115,29 +111,28 @@ const editProduct = async (req, res) => {
   }
 
   try {
-    const affected = await model.update(req.body, {
+    const producto = await model.update(req.body, {
       where: {
         id: req.params.id,
       },
     });
+    console.log(producto);
 
-    if (affected[0] == 1) {
-      if (req.file) {
-        sharp(req.file.buffer)
-          .resize(300)
-          .toFile(
-            path.resolve(
-              __dirname,
-              `../../../public/uploads/productos/${req.params.id}.jpg`
-            )
-          )
-          .catch((err) => console.log(err));
+    if (req.files.length === 2) {
+      for (const [index, file] of req.files.entries()) {
+        const fileName = index === 0 ? "1" : "box"; // Define nombres para cada imagen
+        const imagePath = path.resolve(__dirname, `../../../public/uploads/productos/${req.params.id}-${fileName}.webp`);
+
+        const imagePromise = sharp(file.buffer)
+          .resize(600)
+          .toFile(imagePath)
+          .catch(err => console.log(`Error en la imagen de ${fileName}: ${err}`));
+
+        await imagePromise;
       }
-
-      res.redirect("/admin/productos");
-    } else {
-      res.status(400).send("No se actualizo el producto");
     }
+
+    res.redirect("/admin/productos");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
