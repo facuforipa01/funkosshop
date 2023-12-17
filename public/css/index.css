@@ -550,6 +550,41 @@ td {
     font-size: var(--font-medium);
 }
 
+/* admin */
+.admin__title{
+    font-size: var(--font-xlarge);
+    margin: var(--spacing-12) 0 ;
+}
+.error{
+    padding: var(--spacing-16);
+    background-color: red;
+    font-size: var(--font-medium);
+    color: var(--light-bg-solid);
+    margin: var(--spacing-16) ;
+    border-radius: var(--spacing-12);
+}
+
+label{
+    font-size: var(--font-medium);
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+    padding: var(--spacing-16);
+}
+th{
+    font-size: var(--font-medium);
+    padding: var(--spacing-24);
+}
+td{
+    font-size: var(--font-medium);
+    padding: var(--spacing-20);
+    font-family: var(--base-font);
+    font-weight: 500;
+}
+
+
 /* animaciones */
 
 @keyframes fade {

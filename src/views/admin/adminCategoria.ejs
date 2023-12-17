@@ -3,25 +3,25 @@ Admin - Funkoshop
 
 <%- contentFor('main') %>
 <body>
-    <main>
+    <main class="container">
         
         
         <a href="./categorias/create">
             <h3>
-                <button>Nueva Categoria
+                <button class="item__button">Nueva Categoria
                      <i class="fa-solid fa-square-plus" id="trash"></i>
                 </button>
             </h3>
         </a>
         <a href="./productos/create">
             <h3>
-                <button>Nuevo Producto
+                <button class="item__button">Nuevo Producto
                      <i class="fa-solid fa-square-plus" id="trash"></i>
                 </button>
             </h3>
         </a>
 
-        <h2>LISTADO DE CATEGORIAS</h2>
+        <h2 class="admin__title">LISTADO DE CATEGORIAS</h2>
 
         <div class="buscador">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -33,8 +33,8 @@ Admin - Funkoshop
             <tr>
                 <th>ID</th>
                 <th>Nombre Categoria</th>
-                <th>editar</th>
-                <th>eliminar</th>
+                <th></th>
+                <th></th>
             </tr>
             
             <% for (let i = 0; i < categorias.length; i++) { %>

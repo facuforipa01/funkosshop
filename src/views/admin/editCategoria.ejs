@@ -3,15 +3,15 @@
 
     <%- contentFor('main') %>
 
-        <main>
-            <h1>Edit categoría</h1>
+        <main class="container">
+            <h1 class="admin__title">Edit categoría</h1>
 
-            <form action="/admin/categorias/edit/<%= values.id %>?_method=PUT" method="post">
+            <form class="formulario" action="/admin/categorias/edit/<%= values.id %>?_method=PUT" method="post">
                 <div>
                     <label for="nombre">Nombre: </label>
                     <input type="text" id="nombre" name="nombre"
                         value="<%= typeof values != 'undefined' ? values.nombre : '' %>" />
                 </div>
-                <button type="submit">Guardar</button>
+                <button class="item__button" type="submit">Guardar</button>
             </form>
         </main>

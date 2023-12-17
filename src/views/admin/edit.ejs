@@ -4,10 +4,10 @@
     <%- contentFor('main') %>
 
         <body>
-            <main>
-                <h1>Edit Producto</h1>
+            <main class="container">
+                <h1 class="admin__title">Edit Producto</h1>
                 
-                <form action="/admin/productos/edit/<%= values.id %>?_method=PUT" method="post"
+                <form class="formulario" action="/admin/productos/edit/<%= values.id %>?_method=PUT" method="post"
                     enctype="multipart/form-data">
 
                     <div>
@@ -84,7 +84,7 @@
                             alt="<%= values.nombre %>" />
                         </div>
                     
-                    <button type="submit">Guardar</button>
+                    <button class="item__button" type="submit">Guardar</button>
                 </form>
             </main>
 

@@ -4,10 +4,10 @@
     <%- contentFor('main') %>
 
         <body>
-            <main>
-                <form action="create" method="post" enctype="multipart/form-data">
+            <main class="container">
+                <form class="formulario" action="create" method="post" enctype="multipart/form-data">
 
-                    <h1>Crear nuevo item</h1>
+                    <h1 class="admin__title">CREAR NUEVO ITEM</h1>
 
                     <div>
                         <label for="categoria">Categoría:</label>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div>
-                        <button type="submit">Agregar producto</button>
+                        <button class="item__button" type="submit">Agregar producto</button>
                     </div>
                 </form>
             </main>

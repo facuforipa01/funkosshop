@@ -4,11 +4,11 @@ About - Funkoshop
 <%- contentFor('main') %>
 <main class="container main-contact">
     <section class="contact">
-      <h1 class="mainlogin__title">Contacto</h1>
+      <h1 class="admin__title">Contacto</h1>
       <p class="mainlogin__subtitle">
-        ¿Tienes alguna pregunta o comentario? ¡Estamos aquí para ayudarte!
+       ¿Tienes alguna pregunta o comentario? ¡Estamos aquí para ayudarte!
       </p>
-      <form class="contact-form" action="procesar_formulario.php" method="post">
+      <form class="formulario" action="procesar_formulario.php" method="post">
         <div class="contact-row">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required />
@@ -21,7 +21,7 @@ About - Funkoshop
           <label for="mensaje">Mensaje:</label>
           <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
         </div>
-        <button class="btn-ingresar" type="submit">Enviar</button>
+        <button class="item__button" type="submit">Enviar</button>
       </form>
     </section>
   </main>
