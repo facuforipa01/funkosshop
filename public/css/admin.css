@@ -1,0 +1,258 @@
+:root {
+    /* Palette */
+    --primary-solid: #FF3333;
+    --primary-900: rgba(255, 51, 51, 0.9);
+    --primary-500: rgba(255, 51, 51, 0.5);
+    --primary-300: rgba(255, 51, 51, 0.3);
+
+    --secondary-solid: #1D84B5;
+    --secondary-900: rgb(29, 132, 181, 0.9);
+    --secondary-500: rgb(29, 132, 181, 0.5);
+    --secondary-300: rgb(29, 132, 181, 0.3);
+
+    --dark-solid: #1F1F1F;
+    --dark-900: rgb(31, 31, 31, 0.9);
+    --dark-500: rgb(31, 31, 31, 0.5);
+    --dark-300: rgb(31, 31, 31, 0.3);
+
+    --dark-bg-solid: #30343F;
+    --light-bg-solid: #FAFAFF;
+    --light-font-solid: #FFFFFF;
+
+    /* Typography */
+    --base-font: 'Inter', sans-serif;
+    --alternative-font: 'Raleway', sans-serif;
+
+    /* Font-sizes */
+    --font-display: 4.6em;
+    --font-jumbo: 3.8em;
+    --font-xlarge: 3em;
+    --font-large: 2.4em;
+    --font-medium: 1.8em;
+    --font-small: 1.6em;
+    --font-xsmall: 1.4em;
+
+    /* Spacings */
+    --spacing-128: 12.8rem;
+    --spacing-68: 6.8rem;
+    --spacing-48: 4.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-8: 0.8rem;
+
+
+    --estado-buda: 0.3s;
+    --cada-item: 28px;
+    --cantidad-items: 0;
+
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--base-font);
+}
+body { display: flex; flex-wrap: wrap; min-height: 100vh; }
+
+main{
+  width: 100%;
+}
+
+img {
+    width: 50%;
+}
+
+nav{
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  
+  background: var(--dark-bg-solid);
+}
+nav .wrapper{
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 30px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/*MAIN-TABLA*/
+
+.container{
+  width: 95%;
+  padding: 5%;
+  margin-top: 5%;
+}
+
+.titulo{
+  display: flex;
+  font-size: 24px;
+  justify-content: space-around;
+
+}
+button, svg {
+  width: 50px;
+  height: 50px;
+  margin: 3px;
+  color: #FF3333;
+}
+.buscador {
+  display: flex;
+  width: 50%;
+  height: 44.285px;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+.buscador input{
+  width: 49%;
+height: 24px;
+flex-shrink: 0;
+}
+.lupa{
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+table{
+  left: 110px;
+}
+td{
+  font-size: 24px;
+
+}
+th{
+  font-size: 24px;
+}
+h1{
+  font-size: 24px;
+
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+}
+
+@media (min-height:320px) {
+  .agregar>svg{
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .container{
+    width: 95%;
+    padding: 5%;
+    margin-top: 15%;
+  }
+  .agregar>svg{
+    width: 25px;
+    height: 25px;
+  }
+  
+  img{
+    width: 70%;
+  }
+  
+  footer div.wrapper{ 
+    justify-content: center;
+
+  }
+  .titulo{
+    display: flex;
+    font-size: 12px;
+    justify-content: space-around;
+  
+  }
+  button, svg {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    color: #FF3333;
+  }
+  .buscador {
+    display: flex;
+    width: 90%;
+    height: 44.285px;
+    flex-shrink: 0;
+    margin-top: 20px;
+  }
+  .buscador input{
+    width: 85%;
+  height: 24px;
+
+  }
+  .lupa{
+    width: 21px;
+    height: 21px;
+
+  }
+  .lupa > svg{
+    width: 20px;
+    height: 20px;
+  }
+  button > svg{
+    width: 25px;
+    height: 25px;
+  }
+  
+  td{
+    font-size: 12px;
+    padding: 5px;
+  
+  }
+  th{
+    font-size: 12px;
+  }
+  h1{
+    font-size: 20px;
+  
+  }
+  table { 
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  
+  }
+
+
+}
+
+nav input{
+  display: none;
+}
+
+.body-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+.body-text div{
+  font-size: 45px;
+  font-weight: 600;
+}
