@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FunkoShop</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="wrapper">
+          <div class="logo"><a href="#"><img src="./logos/funkoshop.svg" alt=""></a></div>
+          <input type="radio" name="slider" id="menu-btn">
+          <input type="radio" name="slider" id="close-btn">
+          <ul class="nav-links">
+            <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+            <li>
+                <a href="#" class="desktop-item">SHOP</a>
+                <input type="checkbox" id="showDrop">
+                <label for="showDrop" class="mobile-item">SHOP</label>
+                <ul class="drop-menu">
+                  <li><a href="#">FUNKOS</a></li>
+                  <li><a href="#">REMERAS</a></li>
+                  <li><a href="#">LLAVEROS</a></li>
+                </ul>
+              </li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">CONTACTO</a></li>        
+          </ul>
+          <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container login">
+      <h2 class="titulo">INGRESAR A MI CUENTA</h2>
+      <form class="login_form" action="/" method="post">
+          <div class="login_inputline">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="login_inputline">
+              <label for="password">Contraseña:</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+          <button class="login_button" type="submit">Ingresar</button>
+      </form>
+      <a class="login_link" href="/">Registrarse</a>
+      
+  </main>
+    <br />
+    <footer class="footer">
+
+      <div class="wrapper">
+      <ul class="nav-links pie">
+          <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+          <li><a href="#">REGISTRARSE</a></li>
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">CONTACTO</a></li>
+      </ul>
+          <figure>
+              <img src="./logos/SvgjsG8619.svg" alt="">
+          </figure>
+
+      </div>
+
+  <div class="derechos">
+      <p>All rights reserved 2023 - Funkoshop &copy;</p>
+  </div>
+  
+
+</footer>
+  </body>
+</html>
