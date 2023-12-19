@@ -4,6 +4,7 @@
     <%- contentFor('main') %>
 
         <body>
+
             <div class="shop container">
                 <aside class="aside">
                     <div>
@@ -53,7 +54,7 @@
                 <section class="shop__items--container container">
                     <article class="shop__items">
                         <% for (let i=0; i < productos.length; i++) { if (i===9) { break; } %>
-                            <article>
+                            <article class="shop__item">
                                 <a href="/item/<%= productos[i].id %>">
                                     <picture class="card-item__cover">
                                         <span class="card-item__tag">Nuevo</span>
